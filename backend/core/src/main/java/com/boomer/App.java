@@ -9,7 +9,7 @@ public class App extends AbstractVerticle {
     public void start() {
         Router r;
         r = Router.router(this.vertx);
-        r.get("/").handler(this::ping);
+        r.get("/").handler(this::piit ng);
 
         this.vertx.createHttpServer()
                 .routerHandler(r)

@@ -1,13 +1,14 @@
 package com.boomer;
 
 import io.vertx.core.AbstractVerticle;
+import io.vertx.ext.web.Router;
 
-public class app extends AbstractVerticle {
+public class App extends AbstractVerticle {
 
     @Override
     public void start() {
         Router r;
-        r = Router.route(this.vertx);
+        r = Router.router(this.vertx);
         r.get("/").handler(this::ping);
 
         this.vertx.createHttpServer()

@@ -26,7 +26,7 @@ public class Equation {
          }catch(Exception e){
              System.err.printf("Exception: %s%n", e);
          }
-         
+
          return Math.max(((-1 * b) - midPortion / (2 * a)  ), ((-1 * b) + midPortion / (2 * a)  ));
      }
  

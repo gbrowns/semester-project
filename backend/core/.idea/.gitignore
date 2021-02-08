@@ -1,3 +1,10 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+../.idea/codeStyles/
+        ../.idea/misc.xml
+        ../.idea/modules.xml
+        ../.idea/vcs.xml
+
+backend/core/target/classes/com/boomer/app.class
+

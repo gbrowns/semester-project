@@ -2,18 +2,18 @@ package com.boomer;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.ext.web.Router;
+import io.vertx.ext.web.RoutingContext;
 
 public class App extends AbstractVerticle {
 
     @Override
     public void start() {
-        Router r;
-        r = Router.router(this.vertx);
-        r.get("/").handler(this::piit ng);
+        Router r = Router.router(this.vertx);
+        r.get("/").handler(this::ping);
 
         this.vertx.createHttpServer()
-                .routerHandler(r)
-                .listener(8080);
+                .requestHandler(r)
+                .listen(8080);
 
     }
 

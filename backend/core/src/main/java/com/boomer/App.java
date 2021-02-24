@@ -22,11 +22,7 @@ public class App extends AbstractVerticle {
     }
 
     public boolean isOfDrivingAge(final int age){
-        if(age > 18){
-            return true;
-        }else{
-            return false;
-        }
+        return age > 18;
     }
 
     public int sumOneToTen(){

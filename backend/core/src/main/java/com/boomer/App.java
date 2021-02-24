@@ -2,18 +2,18 @@ package com.boomer;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.ext.web.Router;
+import io.vertx.ext.web.RoutingContext;
 
 public class App extends AbstractVerticle {
 
     @Override
     public void start() {
-        Router r;
-        r = Router.router(this.vertx);
-        r.get("/").handler(this::piit ng);
+        Router r = Router.router(this.vertx);
+        r.get("/").handler(this::ping);
 
         this.vertx.createHttpServer()
-                .routerHandler(r)
-                .listener(8080);
+                .requestHandler(r)
+                .listen(8080);
 
     }
 
@@ -21,4 +21,20 @@ public class App extends AbstractVerticle {
         rc.response().end("Learning Advance visual programming");
     }
 
+    public boolean isOfDrivingAge(final int age){
+        if(age > 18){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public int sumOneToTen(){
+        int sum = 0;
+        for (int i = 1; i < 10; i++){
+            sum += i;
+        }
+
+        return sum;
+    }
 }

@@ -2,4 +2,14 @@
     <string name="app_name">Boomer</string>
     <string name="app_desc">Your music caring partner</string>
     <string name="logo_desc">logger image</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign up</string>
+    <string name="fname">First name</string>
+    <string name="uname">User name</string>
+    <string name="passcode">Password</string>
+    <string name="email">Email address</string>
+    <string name="new_user">New user? Sign up</string>
+    <string name="forget">Forgot password?</string>
+    <string name="login_icon">login_icon</string>
+
 </resources>

@@ -5,6 +5,9 @@
         ../.idea/misc.xml
         ../.idea/modules.xml
         ../.idea/vcs.xml
+         ../docx/.idea/
+         ../docx/docx.iml
+
 
 backend/core/target/classes/com/boomer/app.class
 

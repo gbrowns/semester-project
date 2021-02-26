@@ -19,6 +19,7 @@ public class StudentTest {
     @Test
     public void testGetName(){
 
+        assertNotNull("Name is null", s.getName());
         assertEquals("John",s.getName());
         System.out.println(s.getName());
 

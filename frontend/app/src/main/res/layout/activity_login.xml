@@ -123,7 +123,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/newUserBtn"
         android:layout_width="154dp"
         android:layout_height="23dp"
         android:layout_marginStart="122dp"

@@ -9,7 +9,11 @@
     <string name="passcode">Password</string>
     <string name="email">Email address</string>
     <string name="new_user">New user? Sign up</string>
+    <string name="have_accnt">Already have an Account</string>
     <string name="forget">Forgot password?</string>
     <string name="login_icon">login_icon</string>
+    <string name="google">Sign up with google</string>
+    <string name="fb">Sign up with facebook</string>
+    <string name="next">Next</string>
 
 </resources>

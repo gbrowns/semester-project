@@ -17,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         //set click events
-        newUserBtn = (TextView)findViewById(R.id.newUserBtn);
+        newUserBtn = findViewById(R.id.newUserBtn);
         newUserBtn.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this,SingupActivity.class);
             startActivity(intent);

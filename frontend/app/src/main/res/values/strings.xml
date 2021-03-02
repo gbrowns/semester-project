@@ -15,5 +15,16 @@
     <string name="google">Sign up with google</string>
     <string name="fb">Sign up with facebook</string>
     <string name="next">Next</string>
+    <string name="home">Home</string>
+    <string name="store">Store</string>
+    <string name="notify">Notification</string>
+    <string name="set">Settings</string>
+    <string name="recent">Recent</string>
+    <string name="psets">Piano sets</string>
+    <string name="gsets">Guitar sets</string>
+    <string name="ssets">Saxophone sets</string>
+
+
+
 
 </resources>

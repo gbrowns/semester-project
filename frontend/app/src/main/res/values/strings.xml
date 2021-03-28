@@ -23,6 +23,12 @@
     <string name="psets">Piano sets</string>
     <string name="gsets">Guitar sets</string>
     <string name="ssets">Saxophone sets</string>
+    <string name="homeImage">homeImage</string>
+    <string name="welcome">Your happy music place</string>
+    <string name="cartIcon">Cart Icon</string>
+    <string name="searchIcon">Search Icon</string>
+    <string name="menuDots">Menu Icon</string>
+    <string name="promo">Great Instrument deals.. </string>
 
 
 

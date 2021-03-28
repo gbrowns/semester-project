@@ -18,7 +18,7 @@ public class SingupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_singup);
 
         //add click listener
-        haveAccountBtn = (TextView)findViewById(R.id.haveAccountBtn);
+        haveAccountBtn = findViewById(R.id.haveAccountBtn);
         haveAccountBtn.setOnClickListener(v -> {
 
             Intent intent = new Intent(SingupActivity.this, LoginActivity.class);

@@ -47,6 +47,13 @@ public class SingupActivity extends AppCompatActivity {
                 rootNode = FirebaseDatabase.getInstance("https://boomer-instruments-app-default-rtdb.firebaseio.com/");
                 reference = rootNode.getReference("users"); //set reference location to users
 
+
+                //validate user inputs
+                if(!validateName() | !validateEmail() | !validatePhoneNo() | !validatePassword()){
+                    return;
+                }
+
+
                 //get values passed to the fields
                 String name = regName.getText().toString();
                 String email = regEmail.getText().toString();
@@ -55,7 +62,18 @@ public class SingupActivity extends AppCompatActivity {
 
                 UserHelperClass helperClass = new UserHelperClass(name, email, phoneNo, password); //object instance of userHelperClass
 
-                reference.child(phoneNo).setValue(helperClass); //uniquely
+                reference.child(phoneNo).setValue(helperClass); //uniquely sets values to DB
+
+                //clear input fields
+                regName.setText("");
+                regEmail.setText("");
+                regPhoneNo.setText("");
+                regPassword.setText("");
+
+                //switch to the homepage activity
+                Intent intent = new Intent(SingupActivity.this, HomeActivity.class);
+                startActivity(intent);
+
             }); //signupButton method ends
 
             //switch to login screen
@@ -69,4 +87,79 @@ public class SingupActivity extends AppCompatActivity {
             Log.e(TAG, "onCreate: ", e.getCause());
         }
     }
+
+
+    private Boolean validateName(){
+        String val = regName.getText().toString();
+        String noWhiteSpace = "\\A\\w{4,20}\\z";
+
+        if (val.isEmpty()){
+            regName.setError("Field cannot be empty");
+            regName.requestFocus();
+            return false;
+        }else if(val.length() >= 15){
+            regName.setError("Username too long");
+            return false;
+        }else if(!val.matches(noWhiteSpace)){
+            regName.setError("No white spaces");
+            return false;
+        }
+        else{
+            regName.setError(null);
+            regName.clearFocus();
+            return true;
+        }
+    } //validate username input
+    private Boolean validateEmail(){
+        String val = regEmail.getText().toString();
+        String emailPattern = "[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+        if (val.isEmpty()){
+            regEmail.setError("Field cannot be empty");
+            regEmail.requestFocus();
+            return false;
+        }else if(!val.matches(emailPattern)){
+            regEmail.setError(("Invalid email address"));
+            return false;
+        }
+        else{
+            regEmail.setError(null);
+            regEmail.clearFocus();
+            return true;
+        }
+    } //validate email input
+    private Boolean validatePhoneNo(){
+        String val = regPhoneNo.getText().toString();
+
+        if (val.isEmpty()){
+            regPhoneNo.setError("Field cannot be empty");
+            regPhoneNo.requestFocus();
+            return false;
+        }
+        else{
+            regPhoneNo.setError(null);
+            regPhoneNo.clearFocus();
+            return true;
+        }
+    } //validate phone number input
+    private Boolean validatePassword(){
+
+        String val = regPassword.getText().toString();
+        String  passwordVal = "(?=.*[a-zA-Z])" + "(?=\\S+$)" + ".{4,}" + "$";
+
+        if (val.isEmpty()){
+            regPassword.setError("Field cannot be empty");
+            regPassword.requestFocus();
+            return false;
+        }else if(!val.matches(passwordVal)){
+            regPassword.setError("Password too weak");
+            return false;
+        }
+        else{
+            regPassword.setError(null);
+            regPassword.clearFocus();
+            return true;
+        }
+    } //validate password input
+
 }

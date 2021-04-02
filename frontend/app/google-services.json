@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "791522103228",
+    "project_id": "boomer-instruments-app",
+    "storage_bucket": "boomer-instruments-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791522103228:android:4b145c41325a21c958e5b9",
+        "android_client_info": {
+          "package_name": "com.boomer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791522103228-9r8psq80k2q7k8qcmvd5lqh0sk9medn7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbLtJjdgCTVG__6efslKrJGPdvL6VHwK0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791522103228-9r8psq80k2q7k8qcmvd5lqh0sk9medn7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

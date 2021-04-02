@@ -4,10 +4,11 @@
     <string name="logo_desc">logger image</string>
     <string name="login">Login</string>
     <string name="sign_up">Sign up</string>
-    <string name="fname">First name</string>
+    <string name="fullName">Full name</string>
     <string name="uname">User name</string>
     <string name="passcode">Password</string>
     <string name="email">Email address</string>
+    <string name="phone">Phone number</string>
     <string name="new_user">New user? Sign up</string>
     <string name="have_accnt">Already have an Account</string>
     <string name="forget">Forgot password?</string>
@@ -29,6 +30,7 @@
     <string name="searchIcon">Search Icon</string>
     <string name="menuDots">Menu Icon</string>
     <string name="promo">Great Instrument deals.. </string>
+    <string name="alternative">Or</string>
 
 
 

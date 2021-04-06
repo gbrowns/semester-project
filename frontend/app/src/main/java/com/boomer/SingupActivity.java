@@ -3,12 +3,15 @@ package com.boomer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -40,11 +43,11 @@ public class SingupActivity extends AppCompatActivity {
             regPhoneNo = findViewById(R.id.phoneNumber);
             regPassword = findViewById(R.id.passcode);
 
+            rootNode = FirebaseDatabase.getInstance("https://boomer-instruments-app-default-rtdb.firebaseio.com/");
             //save data to firebase on user sign up
             regBtn.setOnClickListener(v -> {
 
                 //rootNode get database instance
-                rootNode = FirebaseDatabase.getInstance("https://boomer-instruments-app-default-rtdb.firebaseio.com/");
                 reference = rootNode.getReference("users"); //set reference location to users
 
 
@@ -60,19 +63,11 @@ public class SingupActivity extends AppCompatActivity {
                 String phoneNo = regPhoneNo.getText().toString();
                 String password = regPassword.getText().toString();
 
-                UserHelperClass helperClass = new UserHelperClass(name, email, phoneNo, password); //object instance of userHelperClass
+                //UserHelperClass helperClass = new UserHelperClass(name, email, phoneNo, password); //object instance of userHelperClass
 
-                reference.child(phoneNo).setValue(helperClass); //uniquely sets values to DB
+                //reference.child(phoneNo).setValue(helperClass); //uniquely sets values to DB
+                    signUpWithEmail(email, password, phoneNo, name);
 
-                //clear input fields
-                regName.setText("");
-                regEmail.setText("");
-                regPhoneNo.setText("");
-                regPassword.setText("");
-
-                //switch to the homepage activity
-                Intent intent = new Intent(SingupActivity.this, HomeActivity.class);
-                startActivity(intent);
 
             }); //signupButton method ends
 
@@ -162,4 +157,53 @@ public class SingupActivity extends AppCompatActivity {
         }
     } //validate password input
 
+
+    private void signUpWithEmail(String email, String password, String phoneNo, String name) {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(it ->{
+            if (it.isSuccessful()){
+                if (auth.getCurrentUser().getUid() != null){
+                    String uid = auth.getCurrentUser().getUid();
+                    rootNode.getReference("users/"+ uid).setValue(new UserHelperClass(phoneNo, name)).addOnCompleteListener(task->{
+                        if (task.isSuccessful()){
+                            //signup complete
+                            //clear input fields
+                            regName.setText("");
+                            regEmail.setText("");
+                            regPhoneNo.setText("");
+                            regPassword.setText("");
+
+                            //switch to the homepage activity
+                            Intent intent = new Intent(SingupActivity.this, HomeActivity.class);
+                            startActivity(intent);
+                        }
+                        else {
+                            String error = task.getException().getLocalizedMessage();
+                            Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+            }
+            else{
+                String error = it.getException().getLocalizedMessage();
+                Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
+    /*
+    private void validateData(){
+        String name = regName.getText().toString();
+        String email = regEmail.getText().toString();
+        if (name.length() < 1){
+            //empty name
+            return;
+        }
+        if (email.length() < 1 || !Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            //email invalid
+            return;
+        }
+    }
+
+     */
 }

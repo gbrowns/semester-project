@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "791522103228",
+    "firebase_url": "https://boomer-instruments-app-default-rtdb.firebaseio.com",
     "project_id": "boomer-instruments-app",
     "storage_bucket": "boomer-instruments-app.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "791522103228-k6riacq1th9psr3kufn5qpuphkag1lhq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.boomer",
+            "certificate_hash": "cab68e73a94d2e79d12660c5a0ae1d993e40e32b"
+          }
+        },
         {
           "client_id": "791522103228-9r8psq80k2q7k8qcmvd5lqh0sk9medn7.apps.googleusercontent.com",
           "client_type": 3

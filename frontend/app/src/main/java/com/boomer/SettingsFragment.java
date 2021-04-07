@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
@@ -43,10 +45,15 @@ public class SettingsFragment extends Fragment {
         settings.add(new Settings("Logout", "End session"));
 
         //create instance of setting adapter
-        SettingsAdapter settingsAdapter = new SettingsAdapter(this,R.layout.setting_list_row,settings);
+        SettingsAdapter settingsAdapter = new SettingsAdapter(requireContext(),R.layout.setting_list_row,settings);
 
         listView.setAdapter(settingsAdapter);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_settings, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
     }
 }

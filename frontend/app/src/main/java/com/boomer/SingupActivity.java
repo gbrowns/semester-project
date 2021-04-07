@@ -3,9 +3,10 @@ package com.boomer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.Patterns;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class SingupActivity extends AppCompatActivity {
     TextView haveAccountBtn; //button
     Button regBtn; //button
     EditText regName,regEmail, regPhoneNo, regPassword; //input fields
+    ProgressBar signupProgressBar;
 
     //initialize firebase rootNodes
     FirebaseDatabase rootNode;
@@ -37,6 +39,7 @@ public class SingupActivity extends AppCompatActivity {
             //hooks to xml elements
             haveAccountBtn = findViewById(R.id.haveAccountBtn);
             regBtn = findViewById(R.id.signupBtn);
+            signupProgressBar = findViewById(R.id.signupProgressBar);
 
             regName = findViewById(R.id.fullName);
             regEmail = findViewById(R.id.emailAddress);
@@ -65,6 +68,7 @@ public class SingupActivity extends AppCompatActivity {
 
                 //UserHelperClass helperClass = new UserHelperClass(name, email, phoneNo, password); //object instance of userHelperClass
 
+                signupProgressBar.setVisibility(View.VISIBLE); //SET PROGRESS BAR
                 //reference.child(phoneNo).setValue(helperClass); //uniquely sets values to DB
                     signUpWithEmail(email, password, phoneNo, name);
 
@@ -160,7 +164,10 @@ public class SingupActivity extends AppCompatActivity {
 
     private void signUpWithEmail(String email, String password, String phoneNo, String name) {
         FirebaseAuth auth = FirebaseAuth.getInstance();
+
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(it ->{
+
+            signupProgressBar.setVisibility(View.INVISIBLE); //set progressbar invisible
             if (it.isSuccessful()){
                 if (auth.getCurrentUser().getUid() != null){
                     String uid = auth.getCurrentUser().getUid();

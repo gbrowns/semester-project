@@ -2,8 +2,10 @@ package com.boomer;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +21,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText username;
     EditText password;
+    ProgressBar loginProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,9 @@ public class LoginActivity extends AppCompatActivity {
         //get elements by id
         username = findViewById(R.id.uname);
         password = findViewById(R.id.passcode);
+
+        //get progressBar
+        loginProgressBar = findViewById(R.id.loginProgressBar);
 
         //set click events
         newUserBtn = findViewById(R.id.newUserBtn);
@@ -43,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
             String gEmail = username.getText().toString();
             String gPassword = password.getText().toString();
 
+            loginProgressBar.setVisibility(View.VISIBLE);
             loginWithEmail(gEmail, gPassword);
 
         });
@@ -60,6 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                 String error = it.getException().getLocalizedMessage();
                 Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show();
             }
+            loginProgressBar.setVisibility(View.INVISIBLE);
         });
     }
 }

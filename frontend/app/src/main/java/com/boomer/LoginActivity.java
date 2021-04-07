@@ -39,7 +39,6 @@ public class LoginActivity extends AppCompatActivity {
         //set click events
         loginBtn = findViewById(R.id.loginBtn);
         loginBtn.setOnClickListener(v -> {
-
             //grab text input
             String gEmail = username.getText().toString();
             String gPassword = password.getText().toString();

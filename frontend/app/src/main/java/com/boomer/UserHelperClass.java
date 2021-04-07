@@ -12,6 +12,11 @@ public class UserHelperClass {
 
     }
 
+    public UserHelperClass(String phoneNo, String fullName){
+        this.fullName = fullName;
+        this.phoneNo = phoneNo;
+    }
+
     public UserHelperClass(String fullName, String email, String phoneNo, String password) {
         this.fullName = fullName;
         this.email = email;

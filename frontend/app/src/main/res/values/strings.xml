@@ -30,9 +30,14 @@
     <string name="searchIcon">Search Icon</string>
     <string name="menuDots">Menu Icon</string>
     <string name="promo">Great Instrument deals.. </string>
+
     <string name="alternative">Or</string>
 
 
+
+    <string name="edit_profile">Edit Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

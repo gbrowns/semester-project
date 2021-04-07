@@ -1,6 +1,7 @@
 package com.boomer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,13 +34,20 @@ public class SettingsAdapter extends ArrayAdapter<Settings> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         if (convertView == null){
-            convertView = LayoutInflater.from(context).inflate(resource, parent);
+            convertView = LayoutInflater.from(context).inflate(R.layout.setting_list_row, parent, false);
         }
         TextView title = convertView.findViewById(R.id.sTitle);
         TextView desc = convertView.findViewById(R.id.sDesc);
         title.setText(list.get(position).getTitle());
         desc.setText(list.get(position).getDesc());
 
+        convertView.setOnClickListener(view -> {
+            if (position == 5){
+                FirebaseAuth auth = FirebaseAuth.getInstance();
+                auth.signOut();
+                context.startActivity(new Intent(context, LoginActivity.class));
+            }
+        });
         return convertView;
     }
 

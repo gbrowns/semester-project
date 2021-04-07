@@ -176,6 +176,7 @@ public class SingupActivity extends AppCompatActivity {
                             //switch to the homepage activity
                             Intent intent = new Intent(SingupActivity.this, HomeActivity.class);
                             startActivity(intent);
+                            finish();
                         }
                         else {
                             String error = task.getException().getLocalizedMessage();

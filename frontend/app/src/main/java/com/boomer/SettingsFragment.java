@@ -33,7 +33,15 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        listView = listView.findViewById(R.id.settingListView);
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_settings, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        listView = view.findViewById(R.id.settingListView);
 
         ArrayList<Settings> settings = new ArrayList<>();
         //add setting titles and description
@@ -46,14 +54,6 @@ public class SettingsFragment extends Fragment {
 
         //create instance of setting adapter
         SettingsAdapter settingsAdapter = new SettingsAdapter(requireContext(),R.layout.setting_list_row,settings);
-
         listView.setAdapter(settingsAdapter);
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
     }
 }

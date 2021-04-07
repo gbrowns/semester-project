@@ -10,6 +10,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
     //fields
@@ -41,9 +43,17 @@ public class MainActivity extends AppCompatActivity {
 
         //implementing switching from splash to login screen
         new Handler().postDelayed(() -> {
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(intent);
-            finish();
+            FirebaseAuth auth = FirebaseAuth.getInstance();
+            if (auth.getCurrentUser() == null){
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+            else{
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
         },SPLASH_TIME);
     }
 

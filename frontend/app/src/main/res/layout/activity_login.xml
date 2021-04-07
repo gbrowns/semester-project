@@ -61,7 +61,7 @@
         android:ems="10"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:text="@string/uname"
+        android:hint="@string/uname"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
@@ -79,7 +79,7 @@
         android:autofillHints="@string/passcode"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/passcode"
+        android:hint="@string/passcode"
         android:textAlignment="textStart"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -135,6 +135,17 @@
         app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/loginProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/loginBtn"
+        app:layout_constraintEnd_toEndOf="@+id/loginBtn"
+        app:layout_constraintStart_toStartOf="@+id/loginBtn"
+        app:layout_constraintTop_toTopOf="@+id/loginBtn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

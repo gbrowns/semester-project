@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/rTitle"
+        android:layout_width="371dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="118dp"
+
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/settings_item_background"
+        android:paddingTop="39dp"
+        android:paddingStart="-100dp"
+        android:text="@string/edit_profile"
+        android:textAlignment="center"
+        android:textColor="@color/color2"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <ImageView
+        android:id="@+id/rImg"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="300dp"
+        android:contentDescription="@string/recent"
+        app:layout_constraintBottom_toBottomOf="@+id/rTitle"
+        app:layout_constraintEnd_toEndOf="@+id/rTitle"
+        app:layout_constraintTop_toTopOf="@+id/rTitle"
+        app:layout_constraintVertical_bias="0.535"
+        app:srcCompat="@drawable/ic_person_24px"
+        tools:ignore="VectorDrawableCompat" />
+</androidx.constraintlayout.widget.ConstraintLayout>

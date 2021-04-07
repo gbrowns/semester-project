@@ -1,114 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
-
-    <ImageView
-        android:id="@+id/homeImage"
-        android:layout_width="415dp"
-        android:layout_height="276dp"
-        android:background="@drawable/bottom_curves"
-        android:contentDescription="@string/homeImage"
-        android:src="@drawable/slide1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/appName"
-        android:layout_width="123dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="178dp"
-        android:layout_marginBottom="218dp"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/app_name"
-        android:textAlignment="center"
-        android:textColor="@color/purple_700"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="@+id/homeImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-
-    <ImageView
-        android:id="@+id/shoppingCart"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/cartIcon"
-        android:src="@drawable/ic_shopping_cart_black_24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/homeImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/appName"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/menuDots"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/ic_more_vert_black_24dp"
-        android:contentDescription="@string/menuDots"
-        tools:layout_editor_absoluteX="371dp"
-        tools:layout_editor_absoluteY="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/homeImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/searchIcon"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        />
-
-    <ImageView
-        android:id="@+id/searchIcon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/searchIcon"
-        android:src="@android:drawable/ic_menu_search"
-        tools:layout_editor_absoluteX="324dp"
-        tools:layout_editor_absoluteY="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/homeImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/shoppingCart"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        />
-
-    <TextView
-        android:id="@+id/promoMsg"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/amita"
-        android:text="@string/promo"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="25sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="@+id/homeImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.865" />
+        android:background="@drawable/box_design1"
+        android:padding="20dp">
 
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="@color/purple_700"
+            android:textSize="26sp"
+            android:contentDescription="@string/app_name"
+            tools:ignore="RelativeOverlap" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_shopping_cart_black_24dp"
+            android:contentDescription="@string/cartIcon" />
+
+    </RelativeLayout>
+</LinearLayout>

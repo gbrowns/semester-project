@@ -202,4 +202,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signupBtn" />
 
+    <ProgressBar
+        android:id="@+id/signupProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/signupBtn"
+        app:layout_constraintEnd_toEndOf="@+id/signupBtn"
+        app:layout_constraintStart_toStartOf="@+id/signupBtn"
+        app:layout_constraintTop_toTopOf="@+id/signupBtn" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

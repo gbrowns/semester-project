@@ -38,6 +38,9 @@
     <string name="edit_profile">Edit Profile</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="notifications_here">Notifications here</string>
+    <string name="notifications_from_boomer">Notifications from Boomer</string>
+    <string name="simage">sImage</string>
 
 
 </resources>
